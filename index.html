@@ -51,7 +51,7 @@
   }
   #fs-btn {
     position: absolute;
-    top: 0; right: 0;
+    top: 0; left: 0;
     width: 6cqi;
     aspect-ratio: 1;
     background: rgba(255,255,255,0.08);
@@ -62,10 +62,10 @@
     pointer-events: auto;
     touch-action: none;
     z-index: 5;
-    border-radius: 0 0 0 50%;
+    border-radius: 0 0 50% 0;
     padding: 0;
     line-height: 1;
-    display: flex; align-items: flex-end; justify-content: flex-end;
+    display: flex; align-items: flex-end; justify-content: flex-start;
     padding: 0.5cqi;
   }
   #fs-btn:active { background: rgba(255,255,255,0.2); }
