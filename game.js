@@ -1641,6 +1641,22 @@ function setupTouchControls() {
     btn.addEventListener('mouseup', onEnd);
     btn.addEventListener('mouseleave', onEnd);
   });
+
+  // Fullscreen toggle
+  const fsBtn = document.getElementById('fs-btn');
+  if (fsBtn) {
+    function toggleFs(e) {
+      e.preventDefault();
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      } else {
+        const el = document.documentElement;
+        (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+      }
+    }
+    fsBtn.addEventListener('touchstart', toggleFs, { passive: false });
+    fsBtn.addEventListener('mousedown', toggleFs);
+  }
 }
 
 setupTouchControls();
